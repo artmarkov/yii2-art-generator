@@ -10,7 +10,7 @@ $urlParams = $generator->generateUrlParams();
 $nameAttribute = $generator->getNameAttribute();
 $modelClass = StringHelper::basename($generator->modelClass);
 $modelClassId  = Inflector::camel2id(StringHelper::basename($generator->modelClass));
-
+ 
 echo "<?php\n";
 ?>
 
@@ -26,7 +26,7 @@ use artsoft\grid\GridPageSize;
 <?= !empty($generator->searchModelClass) ? "/* @var \$searchModel " . ltrim($generator->searchModelClass, '\\') . " */\n" : '' ?>
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>;
+$this->title = Yii::t('<?= $generator->messageCategory ?>', <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>);
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="<?= $modelClassId ?>-index">
@@ -75,11 +75,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'artsoft\grid\CheckboxColumn', 'options' => ['style' => 'width:10px']],
                     [
+                        'attribute' => 'id',
                         'class' => 'artsoft\grid\columns\TitleActionColumn',
                         'controller' => '/<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>/default',
                         'title' => function(<?= $modelClass ?> $model) {
                             return Html::a($model->id, ['view', 'id' => $model->id], ['data-pjax' => 0]);
                         },
+                        'buttonsTemplate' => '{view} {update} {delete}',
                     ],
 
 <?php
