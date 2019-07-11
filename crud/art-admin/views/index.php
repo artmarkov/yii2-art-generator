@@ -81,7 +81,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'title' => function(<?= $modelClass ?> $model) {
                             return Html::a($model->id, ['view', 'id' => $model->id], ['data-pjax' => 0]);
                         },
-                        'buttonsTemplate' => '{view} {update} {delete}',
+                        'buttonsTemplate' => '{update} {view} {delete}',
                     ],
 
 <?php
