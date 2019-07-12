@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= "<?= " ?>
                 Html::a('Delete', ['/<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>/default/delete', 'id' => $model->id],
                     [
-                    'class' => 'btn btn-sm btn-default',
+                    'class' => 'btn btn-sm btn-danger',
                     'data' => [
                         'confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
                         'method' => 'post',
@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ?>
                 <?= "<?= " ?>
                 Html::a(Yii::t('art', 'Add New'), ['/<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>/default/create'],
-                    ['class' => 'btn btn-sm btn-primary pull-right'])
+                    ['class' => 'btn btn-sm btn-success pull-right'])
                 ?>
             </p>
 
