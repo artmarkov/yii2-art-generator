@@ -30,11 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <p>
                 <?= "<?= " ?>
-                Html::a('Edit', ['/<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>/default/update', 'id' => $model->id],
+                Html::a(Yii::t('art', 'Edit'), ['/<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>/default/update', 'id' => $model->id],
                     ['class' => 'btn btn-sm btn-primary'])
                 ?>
                 <?= "<?= " ?>
-                Html::a('Delete', ['/<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>/default/delete', 'id' => $model->id],
+                Html::a(Yii::t('art', 'Delete'), ['/<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>/default/delete', 'id' => $model->id],
                     [
                     'class' => 'btn btn-sm btn-danger',
                     'data' => [
