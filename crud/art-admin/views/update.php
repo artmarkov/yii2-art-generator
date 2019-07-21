@@ -22,6 +22,10 @@ $this->params['breadcrumbs'][] = ['label' => $model-><?= $generator->getNameAttr
 $this->params['breadcrumbs'][] = <?= $generator->generateString('Update') ?>;
 ?>
 <div class="<?= Inflector::camel2id(StringHelper::basename($generator->modelClass)) ?>-update">
-    <h3 class="lte-hide-title"><?= "<?= " ?>Html::encode($this->title) ?></h3>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="page-title"><?= "<?= " ?>Html::encode($this->title) ?></h3>            
+        </div>
+    </div>
     <?= "<?= " ?>$this->render('_form', compact('model')) ?>
 </div>
